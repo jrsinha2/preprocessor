@@ -1,0 +1,35 @@
+Single Line Macro
+
+Syntax: MACRO macroname const-value
+Example:	MACRO MAX 100
+
+Call:
+Example: mov eax,MAX
+
+
+Conditional Macros
+
+1.	if-endif/if-else-endif:
+There are 6 logical conditions checked by ‘if’:
+‘==’:	EQ
+‘!=’:	NE
+‘>=’:	GE
+‘<=’:	LE
+‘<’:	LT
+‘>’:	GT
+
+Syntax:
+i.	if ( condition )
+		....
+		...
+	endif
+ii.	if ( condition )
+		...
+		...
+	else
+		...
+		...
+	endif
+  
+ 2.while-endwhile   (under development)
+  
