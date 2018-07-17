@@ -1,0 +1,58 @@
+Description
+
+1. Macros are defined with STARTMACRO and ended with ENDMACRO.
+2. The argument in macro definition is preceded by '%' symbol.
+3. There is no such indentation rule in defining macros.
+4. Comments in macros can be defined by using '//'. 
+5. Macro can be called anywhere in the .asm program with parameters or without parameters and after expansion of whole definition get substituted.
+
+General Syntax of Macro Definition
+
+STARTMACRO macroname
+  instruction1  
+  //comment1
+  instruction2
+    STARTMACRO macroname1
+    ..
+    ..
+    ENDMACRO
+ENDMACRO  
+
+
+Without Parameters
+
+STARTMACRO Sum
+  mov eax,1
+  mov ebx,2
+  add eax,ebx
+  push eax
+  call printf
+ENDMACRO
+Call:- Sum
+
+
+Positional Parameters
+
+STARTMACRO Sum %a,%b
+  mov eax,a
+  mov ebx,b
+  add eax,ebx
+  push eax
+  call printf
+ENDMACRO
+
+Call:-  Sum 1,2
+
+
+Keyword Parameters
+
+STARTMACRO Sum %a,%b
+  mov eax,[a]
+  mov ebx,[b]
+  add eax,ebx
+  push eax
+  call printf
+ENDMACRO
+
+Call:- Sum %b=1,%a=2
+
